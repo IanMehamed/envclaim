@@ -1,0 +1,13 @@
+services:
+  envclaim:
+    build: .
+    container_name: envclaim
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - bot_data:/app/data
+
+volumes:
+  bot_data:
+    driver: local
